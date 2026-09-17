@@ -1,10 +1,10 @@
 {
-  "name": "@yourorg/form-system",
+  "name": "@easyweb/form-system",
   "version": "1.0.0",
   "description": "Generic Form widget + submission API route handler + FormSubmission model.",
   "main": "src/index.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "peerDependencies": {
     "react": "^19.0.0"
@@ -12,5 +12,11 @@
   "files": [
     "src",
     "prisma"
-  ]
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR-GITHUB-USERNAME/easyweb-core.git",
+    "directory": "packages/form-system"
+  }
 }

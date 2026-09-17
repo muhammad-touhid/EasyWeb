@@ -15,10 +15,10 @@
     "next-auth": "5.0.0-beta.25",
     "@auth/prisma-adapter": "^2.0.0",
     "@measured/puck": "^0.18.0",
-    "@yourorg/page-builder": "^1.0.0",
-    "@yourorg/auth-kit": "^1.0.0",
-    "@yourorg/admin-kit": "^1.0.0",
-    "@yourorg/form-system": "^1.0.0"
+    "@easyweb/page-builder": "^1.0.0",
+    "@easyweb/auth-kit": "^1.0.0",
+    "@easyweb/admin-kit": "^1.0.0",
+    "@easyweb/form-system": "^1.0.0"
   },
   "devDependencies": {
     "prisma": "^6.0.0",

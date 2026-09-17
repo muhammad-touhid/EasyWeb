@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import { PageRenderer } from "@yourorg/page-builder";
+import { PageRenderer } from "@easyweb/page-builder";
 
 const RESERVED_SLUGS = ["admin", "api", "login"];
 const PROTECTED_SLUGS = ["home", "site-header", "site-footer"];

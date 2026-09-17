@@ -1,10 +1,10 @@
 {
-  "name": "@yourorg/page-builder",
+  "name": "@easyweb/page-builder",
   "version": "1.0.0",
   "description": "Reusable Puck-based page builder: widgets, fields, PageRenderer, and Puck config, shared across all projects.",
   "main": "src/index.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "peerDependencies": {
     "@measured/puck": "^0.18.0",
@@ -14,5 +14,11 @@
   "files": [
     "src",
     "prisma"
-  ]
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR-GITHUB-USERNAME/easyweb-core.git",
+    "directory": "packages/page-builder"
+  }
 }

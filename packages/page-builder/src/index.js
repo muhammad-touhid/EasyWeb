@@ -8,7 +8,7 @@ import { DividerWidgetConfig } from "./widgets/Divider";
 /**
  * The single Puck config every consuming project imports.
  * Adding a widget here makes it available in EVERY project that has
- * `npm update @yourorg/page-builder`'d to this version — no per-project
+ * `npm update @easyweb/page-builder`'d to this version — no per-project
  * code changes required.
  */
 export const pageBuilderConfig = {
