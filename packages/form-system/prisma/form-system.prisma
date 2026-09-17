@@ -1,0 +1,11 @@
+// ── @yourorg/form-system shared model ─────────────────────────────────
+// Copy this file into your project's prisma/schema/ folder once.
+
+model FormSubmission {
+  id         String   @id @default(cuid())
+  formLabel  String
+  pageSlug   String
+  pageTitle  String
+  data       Json
+  createdAt  DateTime @default(now())
+}

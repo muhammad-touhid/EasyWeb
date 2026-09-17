@@ -1,0 +1,13 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Project-specific models go directly in this file, or as additional
+// files inside prisma/schema/ — Prisma v6 merges every .prisma file
+// in this folder automatically. Do not add "prisma.config.ts" (v7 only).

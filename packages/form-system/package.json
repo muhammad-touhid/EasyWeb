@@ -1,0 +1,16 @@
+{
+  "name": "@yourorg/form-system",
+  "version": "1.0.0",
+  "description": "Generic Form widget + submission API route handler + FormSubmission model.",
+  "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "files": [
+    "src",
+    "prisma"
+  ]
+}
