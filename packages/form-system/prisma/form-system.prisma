@@ -1,4 +1,4 @@
-// ── @easyweb/form-system shared model ─────────────────────────────────
+// ── @easyweb59/form-system shared model ─────────────────────────────────
 // Copy this file into your project's prisma/schema/ folder once.
 
 model FormSubmission {

@@ -1,5 +1,5 @@
 {
-  "name": "@easyweb/page-builder",
+  "name": "@easyweb59/page-builder",
   "version": "1.0.0",
   "description": "Reusable Puck-based page builder: widgets, fields, PageRenderer, and Puck config, shared across all projects.",
   "main": "src/index.js",

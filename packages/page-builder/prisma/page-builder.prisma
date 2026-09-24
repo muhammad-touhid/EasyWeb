@@ -1,4 +1,4 @@
-// ── @easyweb/page-builder shared models ──────────────────────────────
+// ── @easyweb59/page-builder shared models ──────────────────────────────
 // Copy this file into your project's prisma/schema/ folder once when
 // starting a new project (Prisma v6 multi-file schema support merges
 // all .prisma files in that folder automatically).

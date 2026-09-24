@@ -1,5 +1,5 @@
 {
-  "name": "@easyweb/admin-kit",
+  "name": "@easyweb59/admin-kit",
   "version": "1.0.0",
   "description": "Reusable admin CRUD scaffolding: list/table patterns, DeleteButton, drag-reorder list, modal patterns.",
   "main": "src/index.js",

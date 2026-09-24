@@ -16,25 +16,25 @@ using versioned npm packages instead.
 
 | Package | What it gives you |
 |---|---|
-| `@easyweb/page-builder` | A Puck-based visual page builder: widgets (Section, Heading, Divider, etc.), reusable field types (color, spacing, responsive), and a `PageRenderer` |
-| `@easyweb/auth-kit` | Auth.js v5 setup with Credentials + Google OAuth, PrismaAdapter wiring, and role-based middleware helpers |
-| `@easyweb/admin-kit` | Reusable admin CRUD scaffolding: drag-reorder lists, delete confirmation patterns, modal patterns |
-| `@easyweb/form-system` | A generic Form widget + submission storage, so you're not hand-building forms per project |
+| `@easyweb59/page-builder` | A Puck-based visual page builder: widgets (Section, Heading, Divider, etc.), reusable field types (color, spacing, responsive), and a `PageRenderer` |
+| `@easyweb59/auth-kit` | Auth.js v5 setup with Credentials + Google OAuth, PrismaAdapter wiring, and role-based middleware helpers |
+| `@easyweb59/admin-kit` | Reusable admin CRUD scaffolding: drag-reorder lists, delete confirmation patterns, modal patterns |
+| `@easyweb59/form-system` | A generic Form widget + submission storage, so you're not hand-building forms per project |
 
 ## Quick start (using EasyWeb in your own project)
 
 ```bash
-npm install @easyweb/page-builder @easyweb/auth-kit
+npm install @easyweb59/page-builder @easyweb59/auth-kit
 ```
 
 ```js
 // src/lib/pageBuilder/config.js
-import { pageBuilderConfig } from '@easyweb/page-builder';
+import { pageBuilderConfig } from '@easyweb59/page-builder';
 export default pageBuilderConfig;
 ```
 
 Copy the Prisma schema snippet each package ships (see
-`node_modules/@easyweb/page-builder/prisma/page-builder.prisma`) into
+`node_modules/@easyweb59/page-builder/prisma/page-builder.prisma`) into
 your own `prisma/schema/` folder — this is the one manual step, since
 Prisma schemas can't be imported like JS code.
 

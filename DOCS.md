@@ -20,7 +20,7 @@ command.
   system.
 - **Each project** installs only the packages it needs, and builds
   everything else itself (its own domain models, its own custom widgets).
-- **Upgrading a project** = `npm update @easyweb/<package>`. That's the
+- **Upgrading a project** = `npm update @easyweb59/<package>`. That's the
   whole "update" step — no manual file copying, no re-implementing.
 - **The one thing that can't be a package**: Prisma schema. It's copied
   once per project from each package's `prisma/*.prisma` file, then
@@ -36,7 +36,7 @@ easyweb-core/                      ← this repo (the workspace)
   LICENSE                          ← MIT
   README.md                        ← public-facing overview
   packages/
-    page-builder/                  ← @easyweb/page-builder
+    page-builder/                  ← @easyweb59/page-builder
       package.json
       src/
         widgets/                   ← Divider, Section, Heading, etc.
@@ -45,7 +45,7 @@ easyweb-core/                      ← this repo (the workspace)
         PageRenderer.jsx
       prisma/
         page-builder.prisma        ← Page, SiteTheme models
-    auth-kit/                      ← @easyweb/auth-kit
+    auth-kit/                      ← @easyweb59/auth-kit
       package.json
       src/
         auth.js                    ← createAuthConfig()
@@ -53,16 +53,16 @@ easyweb-core/                      ← this repo (the workspace)
         index.js
       prisma/
         auth-kit.prisma            ← Admin, User, Account, Session, VerificationToken
-    admin-kit/                     ← @easyweb/admin-kit
+    admin-kit/                     ← @easyweb59/admin-kit
       package.json
       src/index.js                 ← DeleteButton, DraggableList, AdminTable (extract as needed)
-    form-system/                   ← @easyweb/form-system
+    form-system/                   ← @easyweb59/form-system
       package.json
       src/index.js                 ← Form widget + submit handler
       prisma/
         form-system.prisma         ← FormSubmission model
   starter-template/                ← what gets cloned to start a NEW project
-    package.json                   ← references @easyweb/* as dependencies
+    package.json                   ← references @easyweb59/* as dependencies
     .env.example
     prisma/
       schema.prisma                ← base datasource + generator, schema/ folder merges in
@@ -75,7 +75,7 @@ easyweb-core/                      ← this repo (the workspace)
 
 Since EasyWeb is meant to be open for anyone to use, packages are
 published to the **public npm registry** — not GitHub Packages. This
-means anyone can `npm install @easyweb/page-builder` with zero
+means anyone can `npm install @easyweb59/page-builder` with zero
 authentication. You only need to authenticate when *you* publish a new
 version.
 
@@ -123,7 +123,7 @@ npm publish
 
 Each package's `package.json` sets `"publishConfig": { "access": "public" }`,
 so `npm publish` pushes the new version straight to the public npm
-registry. Anyone, anywhere, can now run `npm install @easyweb/page-builder`
+registry. Anyone, anywhere, can now run `npm install @easyweb59/page-builder`
 with no login and no token — that's the whole point of making this open.
 
 ---
@@ -158,11 +158,11 @@ This runs [`npm-check-updates`](https://www.npmjs.com/package/npm-check-updates)
 already wired up as a script in the starter template.
 
 > If you'd rather not touch versions at all right now, plain
-> `npm install` still works — no auth needed, `@easyweb/*` packages are
+> `npm install` still works — no auth needed, `@easyweb59/*` packages are
 > public. `update-deps` is just the recommended first step for a fresh
 > project so you're not starting on stale pins.
 
-This pulls in `@easyweb/page-builder`, `@easyweb/auth-kit`, etc. as
+This pulls in `@easyweb59/page-builder`, `@easyweb59/auth-kit`, etc. as
 listed in `package.json` — only keep the ones this project actually
 needs, remove the rest.
 
@@ -177,9 +177,9 @@ needs, remove the rest.
 
 ```bash
 mkdir -p prisma/schema
-cp node_modules/@easyweb/page-builder/prisma/page-builder.prisma prisma/schema/
-cp node_modules/@easyweb/auth-kit/prisma/auth-kit.prisma prisma/schema/
-cp node_modules/@easyweb/form-system/prisma/form-system.prisma prisma/schema/
+cp node_modules/@easyweb59/page-builder/prisma/page-builder.prisma prisma/schema/
+cp node_modules/@easyweb59/auth-kit/prisma/auth-kit.prisma prisma/schema/
+cp node_modules/@easyweb59/form-system/prisma/form-system.prisma prisma/schema/
 ```
 
 > Note: `Page.createdBy` relates to `Admin`, which lives in
@@ -212,7 +212,7 @@ npx prisma db push
 
 The starter template already includes the catch-all route
 (`src/app/(public)/[...slug]/page.js`) pre-wired to
-`@easyweb/page-builder`'s `PageRenderer`. Verify it matches your
+`@easyweb59/page-builder`'s `PageRenderer`. Verify it matches your
 project's route group structure, then create equivalents for:
 
 - `(public)/page.js` — actual homepage root (separate from the catch-all)
@@ -238,7 +238,7 @@ git push -u origin main
 On Vercel:
 - Connect the repo.
 - Set the same env vars (database, auth, OAuth, Uploadthing). No
-  package-registry token needed — `@easyweb/*` packages install with no
+  package-registry token needed — `@easyweb59/*` packages install with no
   auth since they're public.
 - Confirm build command is `prisma generate && next build`.
 - Deploy.
@@ -247,7 +247,7 @@ On Vercel:
 
 ## 6. Updating a project when core packages improve
 
-Say you added a new widget to `@easyweb/page-builder` in a different
+Say you added a new widget to `@easyweb59/page-builder` in a different
 project, or directly in `easyweb-core`.
 
 1. In `easyweb-core/packages/page-builder`, add the widget, register it
@@ -255,7 +255,7 @@ project, or directly in `easyweb-core`.
 2. Bump the version (see section 7) and `npm publish`.
 3. In any project that wants the update:
    ```bash
-   npm update @easyweb/page-builder
+   npm update @easyweb59/page-builder
    ```
 4. Restart the dev server / redeploy. The widget now appears in that
    project's Puck editor — **no code changes needed in the project**,
@@ -320,7 +320,7 @@ When you build something in a project and realize it should be shared:
 
 | Symptom | Likely cause |
 |---|---|
-| `npm install` fails with 404 on `@easyweb/*` | Package hasn't been published yet, or the name/version in `package.json` is wrong — check https://npmjs.com/package/@easyweb/page-builder |
+| `npm install` fails with 404 on `@easyweb59/*` | Package hasn't been published yet, or the name/version in `package.json` is wrong — check https://npmjs.com/package/@easyweb59/page-builder |
 | `npm publish` fails with 403 | You're not logged in (`npm login`) or not a member of the `easyweb` npm organization |
 | New widget doesn't show up in Puck editor after `npm update` | Check it was actually registered in `pageBuilderConfig.components` in `src/index.js` before publishing |
 | Prisma error about missing `Admin` model | You copied `page-builder.prisma` without also copying `auth-kit.prisma` — `Page.createdBy` needs `Admin` to exist |

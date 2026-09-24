@@ -1,4 +1,4 @@
-// ── @easyweb/auth-kit shared models ───────────────────────────────────
+// ── @easyweb59/auth-kit shared models ───────────────────────────────────
 // Copy this file into your project's prisma/schema/ folder once when
 // starting a new project. Required by Auth.js v5's PrismaAdapter.
 
